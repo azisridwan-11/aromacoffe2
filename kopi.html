@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kedai Coffe</title>
+    <link rel="stylesheet" href="kopi.css">
+</head>
+<body>
+    <header>
+        <h1>☕ AROMA COFFE</h1>
+        <p>Silahkan Pesan Dari Tempat Dudukmu 😂</p>
+    </header>
+          
+    <ul class="ul">
+         <li><a href="index.html">KEMBALI KE BERANDA</a></li>
+        </ul>
+    
+    <div class="container">
+        <section class="menu-grid" id="menu-container">
+            </section>
+
+        <aside class="cart-box">
+            <h3>🛒 Keranjang Anda</h3>
+            <ul id="cart-list">
+                <li class="empty-text">Belum ada item</li>
+            </ul>
+            <hr>
+            <div class="total-section">
+                <span>Total:</span>
+                <span id="total-price">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="openModal()">Konfirmasi Pesanan</button>
+        </aside>
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="form-area">
+                <h3>Lengkapi Data</h3>
+                <input type="text" id="name" placeholder="Nama Pemesan">
+                <input type="number" id="noMeja" placeholder="Nomor Meja (Contoh: 05)">
+                <input type="tel" id="noHP" placeholder="Nomor HP (Contoh: 0812...)">
+                
+                <label>Metode Pembayaran:</label>
+                <select id="paymentMethod">
+                    <option value="Tunai">Tunai di Kasir</option>
+                    <option value="QRIS">QRIS</option>
+                    <option value="Transfer Bank">Transfer Bank (BRI)</option>
+                </select>
+
+                <button class="btn-submit" onclick="processOrder()">Buat Pesanan</button>
+            </div>
+
+            <div id="receipt-area" style="display: none;">
+                <div id="receipt-content"></div>
+                <button class="btn-print" onclick="window.print()">Cetak Nota</button>
+                <button class="btn-reset" onclick="location.reload()">Pesanan Baru</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="kopi.js"></script>
+</body>
+</html>
